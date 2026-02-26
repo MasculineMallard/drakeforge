@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --lake-dark: #020810;
+  --lake-deep: #030d1a;
+  --lake-glow: #0a4a6e;
+  --mist-color: rgba(80, 140, 200, 0.05);
+  --text-glow: #4fc3f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--lake-dark);
+  color: white;
+  font-family: "Georgia", serif;
+}
+
+/* Starfield */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: var(--max-opacity, 0.8);
+  }
+}
+
+/* Fog overlay */
+.fog-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.fog-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 15, 30, 0.8) 0%,
+    rgba(10, 30, 60, 0.3) 30%,
+    transparent 60%
+  );
+}
+
+.fog-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 80%,
+    rgba(60, 120, 180, 0.08) 0%,
+    transparent 70%
+  );
+  animation: fogPulse 8s ease-in-out infinite;
+}
+
+@keyframes fogPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Site header glow */
+.title-glow {
+  text-shadow:
+    0 0 10px rgba(79, 195, 247, 0.5),
+    0 0 20px rgba(79, 195, 247, 0.3),
+    0 0 40px rgba(79, 195, 247, 0.2),
+    0 0 80px rgba(79, 195, 247, 0.1);
+  animation: titlePulse 4s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px rgba(79, 195, 247, 0.5),
+      0 0 20px rgba(79, 195, 247, 0.3),
+      0 0 40px rgba(79, 195, 247, 0.2),
+      0 0 80px rgba(79, 195, 247, 0.1);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(79, 195, 247, 0.7),
+      0 0 30px rgba(79, 195, 247, 0.5),
+      0 0 60px rgba(79, 195, 247, 0.3),
+      0 0 100px rgba(79, 195, 247, 0.15);
+  }
+}
+
+/* Controls */
+.control-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(79, 195, 247, 0.3);
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.1);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  background: rgba(2, 8, 16, 0.6);
+}
+
+/* Scrollbar styling for modal */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(79, 195, 247, 0.3);
+  border-radius: 3px;
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--lake-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.loading-orb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 195, 247, 0.6), transparent);
+  animation: orbPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
