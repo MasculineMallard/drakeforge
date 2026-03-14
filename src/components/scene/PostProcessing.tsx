@@ -6,14 +6,14 @@ export default function PostProcessing() {
   return (
     <EffectComposer>
       <Bloom
-        luminanceThreshold={0.3}
-        intensity={1.5}
-        radius={0.8}
+        luminanceThreshold={0.6}
+        intensity={0.8}
+        radius={0.6}
         mipmapBlur
       />
       <Vignette
         offset={0.3}
-        darkness={0.7}
+        darkness={0.8}
       />
     </EffectComposer>
   );
