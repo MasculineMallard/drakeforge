@@ -38,3 +38,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dev artifacts
+/*.png
+trace.json
+SCRATCH.md
+screenshots/
+downloads/
+bake-images.mjs
+screenshot.mjs
+screenshot-scroll.mjs
+perf-audit.mjs
+process-assets.mjs
+rebuild-hero.mjs
+upscale-hero.mjs
+inspect-models.mjs
+reference/

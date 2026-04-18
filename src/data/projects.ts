@@ -5,7 +5,6 @@ export interface Project {
   description: string;
   techStack: string[];
   features: string[];
-  screenshot: string;
   githubUrl?: string;
   liveUrl?: string;
   color: string;
@@ -26,7 +25,7 @@ export const projects: Project[] = [
       "Daily briefings and habit nudges",
       "Push notifications via ntfy",
     ],
-    screenshot: "/images/project-screenshots/brain.png",
+
     color: "#7B68EE",
   },
   {
@@ -42,7 +41,6 @@ export const projects: Project[] = [
       "Interactive visualizations",
       "Player comparison tools",
     ],
-    screenshot: "/images/project-screenshots/mmolb.png",
     githubUrl: "https://github.com/drake/mmolb-stats",
     color: "#00CED1",
   },
@@ -59,7 +57,6 @@ export const projects: Project[] = [
       "Resource management",
       "Hand-designed maps",
     ],
-    screenshot: "/images/project-screenshots/castle-td.png",
     color: "#FF6347",
   },
   {
@@ -75,7 +72,6 @@ export const projects: Project[] = [
       "Template-based brief generation",
       "Deep validation checks",
     ],
-    screenshot: "/images/project-screenshots/legal-brief.png",
     color: "#DAA520",
   },
   {
@@ -91,7 +87,6 @@ export const projects: Project[] = [
       "Library overlap detection",
       "Quick poll creation",
     ],
-    screenshot: "/images/project-screenshots/what-to-play.png",
     githubUrl: "https://github.com/drake/what-to-play",
     color: "#9370DB",
   },
@@ -108,7 +103,6 @@ export const projects: Project[] = [
       "Season-long progression",
       "Print-friendly plans",
     ],
-    screenshot: "/images/project-screenshots/soccer.png",
     color: "#32CD32",
   },
   {
@@ -116,15 +110,14 @@ export const projects: Project[] = [
     name: "DrakeForge",
     tagline: "This very website",
     description:
-      "A mystical lake-themed portfolio site with interactive water physics, floating lily pad project cards, and ambient particle effects.",
-    techStack: ["Next.js", "React Three Fiber", "Three.js", "Framer Motion", "GLSL"],
+      "An interactive 2D parallax portfolio. Scroll through a moonlit mountain pass into a glowing cave forge, where rune tablets reveal each project.",
+    techStack: ["Next.js", "GSAP", "Lenis", "Tailwind CSS", "Canvas 2D"],
     features: [
-      "Real-time water ripple physics",
-      "Interactive 3D lily pads",
-      "Firefly particle system",
-      "Ambient soundscape",
+      "Multi-layer parallax scrolling with pixel art",
+      "Interactive rune glyph system",
+      "Scroll-driven cave entrance transition",
+      "Atmospheric particle effects",
     ],
-    screenshot: "/images/project-screenshots/drakeforge.png",
     liveUrl: "https://drakeforge.quest",
     color: "#00BFFF",
   },
@@ -141,7 +134,6 @@ export const projects: Project[] = [
       "Leaderboards",
       "Bet history and stats",
     ],
-    screenshot: "/images/project-screenshots/tabs.png",
     githubUrl: "https://github.com/drake/tabs-betting",
     color: "#FF69B4",
   },
